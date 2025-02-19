@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh; /* Минимальная высота страницы */
     background-color: white;
     display: flex;
     justify-content: center;
@@ -11,12 +11,16 @@ body {
 
 .container {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .image-container {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
     background-color: white;
@@ -24,17 +28,13 @@ body {
 }
 
 .image {
-    background-image: url('https://dl.dropboxusercontent.com/scl/fi/8lau647282598njev3k0a/photo_2025-02-06_02-13-16.jpg?rlkey=1zsguj4d528iul0z2ikz57dub&st=eufqthb1'); /* Замените на свой путь */
-    background-size: cover;
+    background-image: url('https://dl.dropboxusercontent.com/scl/fi/8lau647282598njev3k0a/photo_2025-02-06_02-13-16.jpg?rlkey=1zsguj4d528iul0z2ikz57dub&st=eufqthb1'); /* Исправленный Dropbox URL */
+    background-size: contain; /* Масштабируем под экран */
     background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
-    filter: blur(10px); /* Изначально блюр */
-    clip-path: inset(0 100% 0 0); /* Изначально скрыта */
-    transition: clip-path 0.5s ease-in-out;
+    filter: blur(10px); /* Блюр */
 }
 
 .quiz {
@@ -43,26 +43,16 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 1;
+    z-index: 2; /* Поверх изображения */
+    width: 90%;
+    max-width: 400px; /* Ограничение ширины */
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 button {
     margin: 10px;
     padding: 10px 20px;
     font-size: 16px;
-}
-
-/* Медиазапросы для телефонов */
-@media (max-width: 768px) {
-    .container {
-        width: 100vw;
-        height: 100vh;
-    }
-
-    .image {
-        background-size: contain; /* Изображение будет масштабироваться с сохранением пропорций */
-        background-position: center;
-        clip-path: none; /* Убираем обрезку */
-        filter: blur(5px); /* Можно уменьшить блюр на телефоне */
-    }
 }
