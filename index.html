@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Открой картинку</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <div class="image"></div>
+        </div>
+
+        <div class="quiz">
+            <p>Ответьте на вопрос, чтобы открыть картинку!</p>
+            <div id="question" style="display:none;">
+                <p id="question-text"></p>
+                <button onclick="checkAnswer(true)">Правильный ответ</button>
+                <button onclick="checkAnswer(false)">Неправильный ответ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
