@@ -113,7 +113,6 @@ function checkAnswer(selectedIndex, selectedAnswer) {
         } else {
             document.getElementById('question').style.display = 'none';  // Скрываем вопросы после 10-го
             //sendStatistics();  // Отправляем статистику в Telegram
-			finishQuiz();
         }
     } else {
         // Записываем неправильный ответ в массив
@@ -124,19 +123,6 @@ function checkAnswer(selectedIndex, selectedAnswer) {
     }
 }
 
-function finishQuiz() {
-    let quizElement = document.querySelector('.quiz');
-    let imageElement = document.querySelector('.image');
-
-    quizElement.style.opacity = '0';
-    quizElement.style.transform = 'translate(-50%, -60%)';
-    
-    setTimeout(() => {
-        quizElement.style.display = 'none'; // Полностью скрываем после анимации
-    }, 500);
-
-    imageElement.style.filter = 'blur(0px)'; // Убираем блюр после завершения викторины
-}
 
 // Показываем первый вопрос
 askQuestion();
