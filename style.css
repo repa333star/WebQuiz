@@ -24,8 +24,7 @@ body {
 }
 
 .image {
-    background-image: url('https://dl.dropboxusercontent.com/scl/fi/8lau647282598njev3k0a/photo_2025-02-06_02-13-16.jpg?rlkey=1zsguj4d528iul0z2ikz57dub&st=eufqthb1
-'); /* Замените на свой путь */
+    background-image: url('https://dl.dropboxusercontent.com/scl/fi/8lau647282598njev3k0a/photo_2025-02-06_02-13-16.jpg?rlkey=1zsguj4d528iul0z2ikz57dub&st=eufqthb1'); /* Замените на свой путь */
     background-size: cover;
     background-position: center;
     position: absolute;
