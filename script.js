@@ -112,7 +112,7 @@ function checkAnswer(selectedIndex, selectedAnswer) {
             }, 1000); // Пауза перед следующим вопросом
         } else {
             document.getElementById('question').style.display = 'none';  // Скрываем вопросы после 10-го
-            sendStatistics();  // Отправляем статистику в Telegram
+            //sendStatistics();  // Отправляем статистику в Telegram
         }
     } else {
         // Записываем неправильный ответ в массив
@@ -123,35 +123,6 @@ function checkAnswer(selectedIndex, selectedAnswer) {
     }
 }
 
-// Функция для отправки статистики в Telegram
-function sendStatistics() {
-    const wrongAnswersMessage = wrongAnswers.map(wrong => `Вопрос: ${wrong.question} - Ответ: ${wrong.answer}`).join('\n');
-    const choicesMessage = userChoices.map(choice => `Вопрос: ${choice.question} - Ваш ответ: ${choice.answer}`).join('\n');
-
-    const message = `Статистика:
-    Неправильные ответы:
-    ${wrongAnswersMessage}
-
-    Все выборы:
-    ${choicesMessage}`;
-
-    const token = '1241520408:AAH6JGYQUg977tPG6MX6u96ULmeKaQWz6Eo';  // Ваш токен бота Telegram
-    const chatId = '28942689';  // Ваш ID чата в Telegram
-
-    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            chat_id: chatId,
-            text: message,
-        }),
-    })
-    .then(response => response.json())
-    .then(data => console.log('Message sent:', data))
-    .catch(error => console.error('Error sending message:', error));
-}
 
 // Показываем первый вопрос
 askQuestion();
