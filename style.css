@@ -16,11 +16,12 @@ body {
 }
 
 .image-container {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    background-color: white;
-    overflow: hidden;
+    height: 100vh;  /* Высота на весь экран */
+    overflow: auto;  /* Добавляем прокрутку */
 }
 
 .image {
@@ -31,8 +32,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: contain;  /* Это заставит картинку целиком вмещаться в экран */
+    height: auto;  /* Сохраняем пропорции */
     filter: blur(10px);  /* Блюр по умолчанию */
     transition: filter 0.3s ease;  /* Плавное снятие блюра */
 }
