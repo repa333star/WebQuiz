@@ -32,9 +32,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    filter: blur(10px); /* Изначально блюр */
-    clip-path: inset(0 100% 0 0); /* Изначально скрыта */
-    transition: clip-path 0.5s ease-in-out;
+    object-fit: cover; /* Это поможет картинке адаптироваться к экрану */
+    filter: blur(10px); /* Блюр по умолчанию */
+    transition: filter 0.3s ease; /* Плавное снятие блюра */
 }
 
 .quiz {
