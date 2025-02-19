@@ -32,9 +32,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Это поможет картинке адаптироваться к экрану */
-    filter: blur(10px); /* Блюр по умолчанию */
-    transition: filter 0.3s ease; /* Плавное снятие блюра */
+    object-fit: contain;  /* Это заставит картинку целиком вмещаться в экран */
+    filter: blur(10px);  /* Блюр по умолчанию */
+    transition: filter 0.3s ease;  /* Плавное снятие блюра */
 }
 
 .quiz {
